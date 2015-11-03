@@ -13,13 +13,13 @@ router.get('/hello', function(req, res, next) {
 
 router.post('/profile', function (req, res, next) {
 	
-	req.checkBody('name', 'Name is empty').notEmpty()
+	req.checkBody('name', 'Name is empty').notEmpty();
 
-	req.checkBody('height', 'Height is empty').notEmpty()
+	req.checkBody('height', 'Height is empty').notEmpty();
 
-	req.checkBody('height', 'Height is invalid').isInt()
+	req.checkBody('height', 'Height is invalid').isInt();
 
-	var valErrors = req.validateErrors()
+	var valErrors = req.validateErrors();
 
 	if(valErrors) {
 		var data = {
@@ -36,6 +36,6 @@ router.post('/profile', function (req, res, next) {
 	};
 
 	res.send(profile);
-}
+});
 
 module.exports = router;
